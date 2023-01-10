@@ -1,0 +1,115 @@
+body {
+  text-align: center;
+  font-family: "Open Sans", sans-serif;
+  font-weight: 600;
+  font-size: 20px;
+}
+video {
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  z-index: -1;
+}
+h1 {
+  font-weight: 700;
+  font-size: 55px;
+}
+a {
+  text-decoration: none;
+}
+.temperature {
+  font-weight: 700;
+  font-size: 70px;
+  position: relative;
+  left: 15px;
+}
+.units {
+  position: relative;
+  top: -35px;
+  left: 15px;
+}
+.explanation {
+  font-weight: 700;
+  font-size: 30px;
+}
+.col-4.sun {
+  position: relative;
+  top: 80px;
+  line-height: 35px;
+}
+.col-4.atmosphere {
+  position: relative;
+  top: 80px;
+  right: 0px;
+  line-height: 35px;
+}
+input {
+  text-align: center;
+}
+.input-group {
+  width: 50%;
+  text-align: center;
+}
+.form-control {
+  border-radius: 20px;
+}
+.content {
+  background-color: white;
+  max-width: 800px;
+  max-height: 930px;
+  opacity: 0.7;
+  border-radius: 15px;
+  border: 1px solid white;
+  padding: 25px 25px;
+  display: block;
+  margin: 15px auto;
+  box-shadow: 5px 6px 21px 3px rgba(145, 126, 126, 0.66);
+  -webkit-box-shadow: 5px 6px 21px 3px rgba(145, 126, 126, 0.66);
+  -moz-box-shadow: 5px 6px 21px 3px rgba(145, 126, 126, 0.66);
+}
+.weather-app {
+  padding: 15px 15px;
+}
+.btn-outline-secondary {
+  border-radius: 20px;
+  border: 1px solid #ced4da;
+}
+#location-button {
+  position: relative;
+  left: 14rem;
+  top: -3.4rem;
+  border-radius: 20px 20px;
+  padding-left: 10px;
+  padding-right: 10px;
+  border: 1px solid #ced4da;
+}
+#location-button:hover {
+  background: gray;
+  transition: all 300ms ease-in-out;
+  cursor: pointer;
+}
+
+.grid-item {
+  background: white;
+  border-radius: 10px;
+  border: 1.5px solid #dde1e5;
+  border-top-left-radius: 70px;
+  border-top-right-radius: 70px;
+  padding: 35px 10px;
+  display: block;
+  margin: 15px auto;
+  width: 135px;
+  margin-top: 55px;
+}
+.grid-item:hover {
+  background: gray;
+  color: white;
+  transition: all 300ms ease-in-out;
+  margin-top: 40px;
+  cursor: pointer;
+}
