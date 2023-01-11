@@ -39,7 +39,7 @@ function displayWeatherCondition(response) {
     response.data.wind.speed
   )}km/h`;
   document.querySelector(`span.explanation`).innerHTML =
-    response.data.weather[0].main;
+    response.data.weather[0].description;
 
   document.querySelector(`#sunrise-unit`).innerHTML = response.data.sys.sunrise;
   document.querySelector(`#sunset-unit`).innerHTML = response.data.sys.sunset;
