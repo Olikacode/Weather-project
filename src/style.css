@@ -36,6 +36,7 @@ a {
 .explanation {
   font-weight: 700;
   font-size: 30px;
+  text-transform: capitalize;
 }
 .col-4.sun {
   position: relative;
