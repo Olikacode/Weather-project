@@ -114,3 +114,11 @@ input {
   margin-top: 40px;
   cursor: pointer;
 }
+.created-by {
+  text-align: center;
+  color: whitesmoke;
+  font-family: monospace;
+  font-weight: 400;
+  font-size: 15px;
+  opacity: 0.5;
+}
