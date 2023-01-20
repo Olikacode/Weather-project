@@ -36,8 +36,6 @@ a {
 .explanation {
   font-weight: 700;
   font-size: 30px;
-}
-.explanation:first-letter {
   text-transform: capitalize;
 }
 .col-4.sun {
