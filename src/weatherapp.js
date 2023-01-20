@@ -41,8 +41,24 @@ function displayWeatherCondition(response) {
   document.querySelector(`span.explanation`).innerHTML =
     response.data.weather[0].description;
 
-  document.querySelector(`#sunrise-unit`).innerHTML = response.data.sys.sunrise;
-  document.querySelector(`#sunset-unit`).innerHTML = response.data.sys.sunset;
+  function formatTime(timestamp) {
+    let time = new Date(timestamp);
+    let hours = time.getHours();
+    if (hours < 10) {
+      hours = `0${hours}`;
+    }
+    let minutes = time.getMinutes();
+    if (minutes < 10) {
+      minutes = `0${minutes}`;
+    }
+    return `${hours}:${minutes}`;
+  }
+  document.querySelector(`#sunrise-unit`).innerHTML = formatTime(
+    response.data.sys.sunrise * 1000
+  );
+  document.querySelector(`#sunset-unit`).innerHTML = formatTime(
+    response.data.sys.sunset * 1000
+  );
 }
 
 function search(city) {
