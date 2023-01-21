@@ -59,6 +59,13 @@ function displayWeatherCondition(response) {
   document.querySelector(`#sunset-unit`).innerHTML = formatTime(
     response.data.sys.sunset * 1000
   );
+  //Added real weather icon and changed div into img in html
+  let iconElement = document.querySelector("#icon");
+  iconElement.setAttribute(
+    "src",
+    `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+  );
+  iconElement.setAttribute("alt", response.data.weather[0].description);
 }
 
 function search(city) {

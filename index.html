@@ -61,7 +61,12 @@
               <strong>Sunrise:</strong> <span id="sunrise-unit"></span>
               <br /><strong>Sunset:</strong> <span id="sunset-unit"></span>
             </div>
-            <div class="col-4" style="font-size: 150px">⛅️</div>
+            <img
+              src="http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png"
+              alt=""
+              id="icon"
+              class="col-4"
+            />
             <div class="col-4 atmosphere">
               <strong>Humidity:</strong> <span id="humidity-unit"></span>
               <br /><strong>Wind:</strong> <span id="wind-unit"></span>
