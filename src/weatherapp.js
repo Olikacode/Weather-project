@@ -28,6 +28,7 @@ date.innerHTML = currentTime(now);
 /////Task 1 week5: when a user searches for a city (example: New York), it should display the name of the city on the result page and the current temperature of the city./////
 
 function displayWeatherCondition(response) {
+  celsiusTemp = Math.round(response.data.main.temp);
   document.querySelector("h1").innerHTML = response.data.name;
   document.querySelector(".temperature").innerHTML = Math.round(
     response.data.main.temp
@@ -92,23 +93,33 @@ searchForm.addEventListener("submit", searchInput);
 let button = document.querySelector("#search-button");
 button.addEventListener("click", searchInput);
 
-/////Feature #3 Display a fake temperature (i.e 17) in Celsius and add a link to convert it to Fahrenheit. When clicking on it, it should convert the temperature to Fahrenheit. When clicking on Celsius, it should convert it back to Celsius./////
+//////////Unit conversion
+function tempInCelsius(event) {
+  event.preventDefault();
+  //add the active class to the celTempLink and remove from fahTempLink
+  celTempLink.classList.add("active");
+  fahTempLink.classList.remove("active");
 
-//function tempInCelsius(event) {
-//event.preventDefault();
-// let numberInCelsius = document.querySelector(".temperature");
-// numberInCelsius.innerHTML = 19;
-//}
-//let celTemp = document.querySelector("#celsius-link");
-//celTemp.addEventListener("click", tempInCelsius);
+  let numberInCelsius = document.querySelector(".temperature");
+  numberInCelsius.innerHTML = Math.round(celsiusTemp);
+}
 
-//function tempInFahrenheit(event) {
-// event.preventDefault();
-//let numberInFahrenheit = document.querySelector(".temperature");
-//numberInFahrenheit.innerHTML = Math.round((19 * 9) / 5 + 32);
-//}
-//let fahTemp = document.querySelector("#fahrenheit-link");
-//fahTemp.addEventListener("click", tempInFahrenheit);
+let celsiusTemp = null;
+
+function tempInFahrenheit(event) {
+  event.preventDefault();
+  //remove the active class from the celTempLink and add to the fahTempLink
+  celTempLink.classList.remove("active");
+  fahTempLink.classList.add("active");
+
+  let numberInFahrenheit = document.querySelector(".temperature");
+  numberInFahrenheit.innerHTML = Math.round((celsiusTemp * 9) / 5 + 32);
+}
+let fahTempLink = document.querySelector("#fahrenheit-link");
+fahTempLink.addEventListener("click", tempInFahrenheit);
+
+let celTempLink = document.querySelector("#celsius-link");
+celTempLink.addEventListener("click", tempInCelsius);
 
 function getCoords(position) {
   let apiKey = "97bed167ec49bff56e6c1b63daef9c86";
