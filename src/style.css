@@ -122,3 +122,10 @@ input {
   font-size: 15px;
   opacity: 0.5;
 }
+.units .active {
+  color: #212529;
+  cursor: default;
+}
+.units .active:hover {
+  text-decoration: none;
+}
