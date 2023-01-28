@@ -124,6 +124,7 @@ function displayWeatherCondition(response) {
     `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
   );
   iconElement.setAttribute("alt", response.data.weather[0].description);
+
   //Getting coords for the weather forecast
   getForecast(response.data.coord);
   //
@@ -181,6 +182,7 @@ fahTempLink.addEventListener("click", tempInFahrenheit);
 let celTempLink = document.querySelector("#celsius-link");
 celTempLink.addEventListener("click", tempInCelsius);
 
+/////Functions coordinates and location////
 function getCoords(position) {
   let apiKey = "97bed167ec49bff56e6c1b63daef9c86";
   let lat = position.coords.latitude;
