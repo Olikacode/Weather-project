@@ -25,6 +25,22 @@ let now = new Date();
 let date = document.querySelector("h2");
 date.innerHTML = currentTime(now);
 
+//Function format day//
+function formatDay(timestamp) {
+  let date = new Date(timestamp * 1000);
+  let day = date.getDay();
+  let days = [
+    "Sunday",
+    "Monday",
+    "Tuesday",
+    "Wednesday",
+    "Thursday",
+    "Friday",
+    "Saturday",
+  ];
+
+  return days[day];
+}
 //Display forecast//
 function displayForecast(response) {
   let forecast = response.data.daily;
