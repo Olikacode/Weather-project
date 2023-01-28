@@ -129,3 +129,7 @@ input {
 .units .active:hover {
   text-decoration: none;
 }
+
+.weather-forecast-temperature-min {
+  opacity: 0.8;
+}
