@@ -59,7 +59,13 @@ function displayForecast(response) {
   forecastElement.innerHTML = forecastHTML;
 }
 //
-
+//Getting coords function and implementing forecast API + //Caling forecast function//
+function getForecast(coordinates) {
+  console.log(coordinates);
+  let apiKey = "97bed167ec49bff56e6c1b63daef9c86";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`;
+  axios.get(apiUrl).then(displayForecast);
+}
 /////Task 1 week5: when a user searches for a city (example: New York), it should display the name of the city on the result page and the current temperature of the city./////
 
 function displayWeatherCondition(response) {
@@ -102,6 +108,9 @@ function displayWeatherCondition(response) {
     `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
   );
   iconElement.setAttribute("alt", response.data.weather[0].description);
+  //Getting coords for the weather forecast
+  getForecast(response.data.coord);
+  //
 }
 
 function search(city) {
