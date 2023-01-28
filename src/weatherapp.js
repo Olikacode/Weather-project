@@ -25,6 +25,41 @@ let now = new Date();
 let date = document.querySelector("h2");
 date.innerHTML = currentTime(now);
 
+//Display forecast//
+function displayForecast(response) {
+  let forecast = response.data.daily;
+  let forecastElement = document.querySelector("#forecast");
+
+  let forecastHTML = `<div class="row">`;
+  forecast.forEach(function (forecastDay, index) {
+    if (index < 5) {
+      forecastHTML =
+        forecastHTML +
+        `<div class="col-2.4 grid-item shadow">
+  <div class="weather-forecast-date">${formatDay(forecastDay.dt)}</div>
+  <img
+    src="http://openweathermap.org/img/wn/${forecastDay.weather[0].icon}@2x.png"
+    alt=""
+    width="75px"
+    id="icon"
+  />
+  <div class="weather-forecast-temperature">
+    <span class="weather-forecast-temperature-max">${Math.round(
+      forecastDay.temp.max
+    )}° /</span>
+    <span class="weather-forecast-temperature-min">${Math.round(
+      forecastDay.temp.min
+    )}° </span>
+</div>
+</div>`;
+    }
+  });
+
+  forecastHTML = forecastHTML + `</div>`;
+  forecastElement.innerHTML = forecastHTML;
+}
+//
+
 /////Task 1 week5: when a user searches for a city (example: New York), it should display the name of the city on the result page and the current temperature of the city./////
 
 function displayWeatherCondition(response) {
